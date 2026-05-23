@@ -1,0 +1,114 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* SentimentScope design system — dark, Linear-inspired analytics. All colors HSL. */
+
+@layer base {
+  :root {
+    /* Dark is default — we mirror tokens in :root and .dark */
+    --background: 240 7% 7%;            /* #0F0F11 */
+    --foreground: 220 14% 92%;
+
+    --surface: 240 14% 13%;             /* #1A1A2E card */
+    --surface-2: 240 12% 16%;
+    --hairline: 0 0% 100%;              /* used with /10 alpha */
+
+    --card: 240 14% 13%;
+    --card-foreground: 220 14% 92%;
+
+    --popover: 240 14% 13%;
+    --popover-foreground: 220 14% 92%;
+
+    --primary: 239 84% 67%;             /* #6366F1 indigo */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 240 12% 18%;
+    --secondary-foreground: 220 14% 92%;
+
+    --muted: 240 10% 18%;
+    --muted-foreground: 220 9% 60%;
+
+    --accent: 239 84% 67%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 240 10% 20%;
+    --input: 240 10% 20%;
+    --ring: 239 84% 67%;
+
+    --radius: 0.75rem;
+
+    /* Sentiment tokens */
+    --positive: 142 71% 45%;            /* #22C55E */
+    --negative: 0 84% 60%;              /* #EF4444 */
+    --neutral:  215 20% 65%;            /* #94A3B8 */
+
+    --sidebar-background: 240 10% 9%;
+    --sidebar-foreground: 220 12% 80%;
+    --sidebar-primary: 239 84% 67%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 10% 14%;
+    --sidebar-accent-foreground: 220 14% 95%;
+    --sidebar-border: 240 10% 16%;
+    --sidebar-ring: 239 84% 67%;
+  }
+
+  .dark {
+    --background: 240 7% 7%;
+    --foreground: 220 14% 92%;
+    --surface: 240 14% 13%;
+    --surface-2: 240 12% 16%;
+    --card: 240 14% 13%;
+    --card-foreground: 220 14% 92%;
+    --popover: 240 14% 13%;
+    --popover-foreground: 220 14% 92%;
+    --primary: 239 84% 67%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 240 12% 18%;
+    --secondary-foreground: 220 14% 92%;
+    --muted: 240 10% 18%;
+    --muted-foreground: 220 9% 60%;
+    --accent: 239 84% 67%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 240 10% 20%;
+    --input: 240 10% 20%;
+    --ring: 239 84% 67%;
+    --positive: 142 71% 45%;
+    --negative: 0 84% 60%;
+    --neutral:  215 20% 65%;
+    --sidebar-background: 240 10% 9%;
+    --sidebar-foreground: 220 12% 80%;
+    --sidebar-primary: 239 84% 67%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 10% 14%;
+    --sidebar-accent-foreground: 220 14% 95%;
+    --sidebar-border: 240 10% 16%;
+    --sidebar-ring: 239 84% 67%;
+  }
+}
+
+@layer base {
+  * { @apply border-border; }
+  html, body, #root { height: 100%; }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply rounded-xl border bg-card;
+    border-color: hsl(0 0% 100% / 0.08);
+    box-shadow: 0 1px 0 hsl(0 0% 100% / 0.03) inset;
+  }
+  .hairline {
+    border-color: hsl(0 0% 100% / 0.08);
+  }
+}
